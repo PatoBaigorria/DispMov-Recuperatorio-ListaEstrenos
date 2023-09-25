@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_estrenos">
+
+    <fragment
+        android:id="@+id/nav_estrenos"
+        android:name="com.patriciasoft.recuperatorio.ui.estrenos.GalleryFragment"
+        android:label="Estrenos"
+        tools:layout="@layout/fragment_gallery" >
+        <action
+            android:id="@+id/action_nav_estrenos_to_nav_detalleEstrenos"
+            app:destination="@id/nav_detalleEstrenos" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_salir"
+        android:name="com.patriciasoft.recuperatorio.ui.salir.SlideshowFragment"
+        android:label="Salir"
+        tools:layout="@layout/fragment_slideshow" />
+    <fragment
+        android:id="@+id/nav_detalleEstrenos"
+        android:name="com.patriciasoft.recuperatorio.ui.estrenos.DetalleEstrenos"
+        android:label="Detalles de la Película"
+        tools:layout="@layout/fragment_detalle_estrenos" >
+        <action
+            android:id="@+id/action_detalleEstrenos_to_nav_estrenos"
+            app:destination="@id/nav_estrenos" />
+    </fragment>
+</navigation>
